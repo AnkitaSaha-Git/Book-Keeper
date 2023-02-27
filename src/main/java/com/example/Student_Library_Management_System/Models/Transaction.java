@@ -3,7 +3,9 @@ package com.example.Student_Library_Management_System.Models;
 
 import com.example.Student_Library_Management_System.Enum.TransactionStatus;
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -19,6 +21,29 @@ public class Transaction {
     private int fine;
 
     private String transactionId= UUID.randomUUID().toString();
+
+    @CreationTimestamp
+    private Date transactionDate;
+
+    private boolean isIssueOperation;
+
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
+    }
+
+    public boolean isIssueOperation() {
+        return isIssueOperation;
+    }
+
+    public void setIssueOperation(boolean issueOperation) {
+        isIssueOperation = issueOperation;
+    }
+
+
 
     //Connection with book
     @ManyToOne

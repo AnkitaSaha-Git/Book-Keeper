@@ -49,17 +49,26 @@ public class Card {
     List<Book> booksIssued= new ArrayList<>();
 
 
-    public List<Transaction> getListOfTransactions() {
-        return listOfTransactions;
+
+    public List<Book> getBooksIssued() {
+        return booksIssued;
     }
 
-    public void setListOfTransactions(List<Transaction> listOfTransactions) {
-        this.listOfTransactions = listOfTransactions;
+    public void setBooksIssued(List<Book> booksIssued) {
+        this.booksIssued = booksIssued;
     }
 
-    //Crad is parent wrt to transaction
+    public List<Transaction> getTransactionList() {
+        return TransactionList;
+    }
+
+    public void setTransactionList(List<Transaction> transactionList) {
+        TransactionList = transactionList;
+    }
+
+    //Card is parent wrt to transaction
     @OneToMany(mappedBy = "card",cascade = CascadeType.ALL)
-    private List<Transaction> listOfTransactions= new ArrayList<>();
+    private List<Transaction> TransactionList= new ArrayList<>();
     public Card() {
     }
 
