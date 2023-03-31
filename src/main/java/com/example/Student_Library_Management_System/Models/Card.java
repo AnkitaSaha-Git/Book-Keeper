@@ -20,13 +20,16 @@ public class Card {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @CreationTimestamp
+    @CreationTimestamp //Auto time stamp when an entry is created
     private Date createdOn;
 
-    @UpdateTimestamp
+    @UpdateTimestamp // Sets time stamp when an entry is updated
     private Date updatedOn;
 
     @Enumerated(value= EnumType.STRING)
+    //The "@Enumerated" annotation indicates that the enum type should be mapped
+    // to the database as a string. The "value = EnumType.STRING" part specifies
+    // that the enum values should be stored in the database as strings
     private CardStatus cardStatus;
 
     public Student getStudentVariableName() {

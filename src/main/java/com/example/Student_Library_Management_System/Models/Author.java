@@ -18,7 +18,6 @@ public class Author {
     private String country;
     private double rating;
 
-
     // Bidirectional mapping
     @OneToMany(mappedBy = "author",cascade = CascadeType.ALL)
    private List<Book> booksWritten=new ArrayList<>();
